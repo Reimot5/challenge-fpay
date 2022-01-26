@@ -1,0 +1,46 @@
+{
+  "name": "challenge-fpay",
+  "version": "1.0.0",
+  "description": "Prueba Técnica Stack MEAN para Fpay",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -r dotenv/config src/index.js",
+    "test": "jest --detectOpenHandles --runInBand --forceExit",
+    "test:watch": "npm test -- --watchAll --runInBand",
+    "coverage": "npm test -- --coverage --no-cache --detectOpenHandles",
+    "coverage:watch": "npm run coverage -- --forceExit --watch",
+    "lint": "npx eslint \"*/**/*.js\"",
+    "lint:fix": "npx eslint \"*/**/*.js\" --quiet --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reimot5/challenge-fpay.git"
+  },
+  "author": "Tomás Rubiño",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Reimot5/challenge-fpay/issues"
+  },
+  "homepage": "https://github.com/Reimot5/challenge-fpay#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "helmet": "^5.0.2"
+  },
+  "devDependencies": {
+    "dotenv": "^14.3.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
+  }
+}
