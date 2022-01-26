@@ -9,6 +9,7 @@ const SERVER_NAME = env.server_name
 
 // ROUTERS
 const routerTest = require('../routes/routerTest.js')
+const routerPrimeNumbers = require('../routes/routerPrimeNumbers.js')
 
 const corsOptions = {
   origin: '*',
@@ -19,6 +20,7 @@ const corsOptions = {
 }
 
 // MIDDLEWARES
+// ADD MORGANA
 app.use(compression())
 app.use(helmet())
 app.use(cors(corsOptions))
@@ -27,6 +29,7 @@ app.use(json())
 
 // ROUTES
 app.use('/test', routerTest)
+app.use('/primeNumbers', routerPrimeNumbers)
 
 app.get('/', async (req, res) => {
   res.send(`Servidor ${SERVER_NAME} corriendo correctamente hace ${process.uptime()} segundos.`)
