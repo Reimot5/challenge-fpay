@@ -70,6 +70,12 @@ _Puedes probar la api utilizando Postman con [esta](https://github.com/Reimot5/c
 
 En esta coleccion encontraras todas las rutas de la api.
 
+Igualmente te dejo aquí las rutas por si quieres usarlas.
+
+* https://localhost:3001/ - Index.
+* https://localhost:3001/health - Se puede utilizar para saber si la API funciona y desde hace cuanto tiempo que esta corriendo.
+* https://localhost:3001/prime-numbers/:number - Podemos pasarle como parámetro un número entero, mayor a 2 y nos devuelve todos los numeros primos entre ese número y 2.
+
 ## Construido con 🛠️
 
 * [Docker](https://www.docker.com/) - Docker es el motor sobre el cual se montan los contenedores
