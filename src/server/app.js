@@ -1,15 +1,13 @@
 require('dotenv').config()
 const { env } = require('../config')
 const app = require('express')()
-const { json, urlencoded } = require('body-parser')
 const compression = require('compression')
 const cors = require('cors')
 const helmet = require('helmet')
-const SERVER_NAME = env.server_name
 
 // ROUTERS
-const routerTest = require('../routes/routerTest.js')
-const routerPrimeNumbers = require('../routes/routerPrimeNumbers.js')
+const routerHealthCheck = require('../routes/healthCheck.router.js')
+const routerPrimeNumbers = require('../routes/primeNumbers.router.js')
 
 const corsOptions = {
   origin: '*',
@@ -24,15 +22,13 @@ const corsOptions = {
 app.use(compression())
 app.use(helmet())
 app.use(cors(corsOptions))
-app.use(urlencoded({ extended: true }))
-app.use(json())
 
 // ROUTES
-app.use('/test', routerTest)
-app.use('/primeNumbers', routerPrimeNumbers)
+app.use('/health', routerHealthCheck)// health y cambiar nombres a controlers y routers
+app.use('/prime-numbers', routerPrimeNumbers)
 
 app.get('/', async (req, res) => {
-  res.send(`Servidor ${SERVER_NAME} corriendo correctamente hace ${process.uptime()} segundos.`)
+  res.send(`Welcome to server ${env.server_name}.`)
 })
 
 module.exports = app

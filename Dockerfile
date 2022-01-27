@@ -1,4 +1,4 @@
-FROM node
+FROM node:16.13.1-alpine3.15
 
 WORKDIR /challenge-fpay
 
@@ -11,5 +11,3 @@ COPY . .
 EXPOSE 3001
 
 CMD [ "npm", "start" ]
-
-

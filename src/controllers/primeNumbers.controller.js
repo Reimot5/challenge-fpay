@@ -1,14 +1,14 @@
 module.exports = (() => {
   return {
-    getPrimeNumbers(enteredNumber) {
-      const lowerNumber = 2
+    getPrimeNumbers(userEnteredNumber) {
+      const lowerPrimeNumber = 2
       const result = []
-      // looping from lowerNumber to enteredNumber
-      for (let i = lowerNumber; i <= enteredNumber; i++) {
-        let flag = 0
 
+      // looping from lowerPrimeNumber to userEnteredNumber
+      for (let i = lowerPrimeNumber; i <= userEnteredNumber; i++) {
+        let flag = 0
         // looping through 2 to user input number
-        for (let j = 2; j < i; j++) {
+        for (let j = lowerPrimeNumber; j < i; j++) {
           if (i % j === 0) {
             flag = 1
             break
@@ -20,7 +20,7 @@ module.exports = (() => {
           result.push(i)
         }
       }
-      return result
+      return result.reverse().join(", ")
     },
   }
 })()
