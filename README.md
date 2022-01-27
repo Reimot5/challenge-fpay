@@ -46,6 +46,15 @@ Ahora debes crear un archivo llamado ".env" y colocar dentro las siguientes vari
 
 ![image](https://user-images.githubusercontent.com/56139749/151357551-21f4a043-b85c-4395-9845-5d131992165e.png)
 
+Luego, puedes ejecutar estos 2 comandos para correr el servidor de manera local, sino puedes utilizar docker e ir al siguiente paso.
+```bash
+npm i
+```
+
+```bash
+npm start
+```
+
 Por ultimo, utiliza este comando:
 ```docker
 docker build -t reimot5/challenge-fpay . && docker run -p 3001:3001 --name challenge-fpay reimot5/challenge-fpay
