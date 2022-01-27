@@ -7,9 +7,9 @@ router.get('/:number',
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).send(errors.errors[0].msg);
+      return res.status(400).json(errors.errors[0].msg);
     }
-    res.send(getPrimeNumbers(req.params.number))
+    res.json(getPrimeNumbers(req.params.number))
   })
 
 module.exports = router
