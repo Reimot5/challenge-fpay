@@ -4,6 +4,7 @@ const app = require('express')()
 const compression = require('compression')
 const cors = require('cors')
 const helmet = require('helmet')
+const morgan = require('morgan')
 
 // ROUTERS
 const routerHealthCheck = require('../routes/healthCheck.router.js')
@@ -18,13 +19,13 @@ const corsOptions = {
 }
 
 // MIDDLEWARES
-// ADD MORGANA
+app.use(morgan('dev'))
 app.use(compression())
 app.use(helmet())
 app.use(cors(corsOptions))
 
 // ROUTES
-app.use('/health', routerHealthCheck)// health y cambiar nombres a controlers y routers
+app.use('/health', routerHealthCheck)
 app.use('/prime-numbers', routerPrimeNumbers)
 
 app.get('/', async (req, res) => {
